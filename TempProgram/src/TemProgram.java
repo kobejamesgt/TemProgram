@@ -127,10 +127,16 @@ public class TemProgram {
 
         // •	You cannot leave the house until all items of clothing are on (except socks and a jacket when it’s hot)
         else if (command.equals("7")) {
-
-            if (!(instance instanceof HotResponse)) {
-                if (!parsedCommands.contains("3") || !parsedCommands.contains("5")) {
+            if(instance instanceof ColdResponse){
+                if(!parsedCommands.contains("1") || !parsedCommands.contains("2") || !parsedCommands.contains("3")
+                   || !parsedCommands.contains("4") || !parsedCommands.contains("5")
+                   || !parsedCommands.contains("6")){
                     throw new Exception("fail");
+                }else{
+                    if(!parsedCommands.contains("1") || !parsedCommands.contains("2")
+                       || !parsedCommands.contains("4") || !parsedCommands.contains("6")){
+                        throw new Exception("fail");
+                    }
                 }
             }
         }
